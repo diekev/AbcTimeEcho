@@ -50,6 +50,14 @@ int main(int argc, const char **argv)
     has_error = true;
   }
 
+  if (max_time == -std::numeric_limits<chrono_t>::max()) {
+    has_error = true;
+  }
+
+  if (fps == std::numeric_limits<chrono_t>::max()) {
+    has_error = true;
+  }
+
   if (has_error) {
     std::cerr << "Cannot determine the time information from the archive !\n";
     return 1;
